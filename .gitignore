@@ -17,3 +17,6 @@ shots/
 .impeccable/review/
 .impeccable/build/
 .impeccable/critique/
+.vercel
+.env*
+!.env.production
