@@ -41,6 +41,17 @@ test("homepage carries the product pitch, install action, and real proof", () =>
   }
 });
 
+test("header Docs link points to the site docs, not GitHub", () => {
+  const source = read("components/Home.tsx");
+  assert.ok(source.includes('href="/docs"'), "homepage Docs link must be internal");
+  assert.ok(
+    !source.includes("github.com/beast-ofcourse/atom-lite/tree/master/docs"),
+    "homepage Docs link must not point at repository docs",
+  );
+  const html = read(".next/server/app/index.html");
+  assert.match(html, /href="\/docs"/);
+});
+
 test("no invented domain leaks into the built site", () => {
   for (const path of [
     ".next/server/app/index.html",

@@ -253,11 +253,7 @@ export default function Home() {
           <span className="brand-name">atom-lite</span>
         </a>
         <nav className="site-nav" aria-label="Primary">
-          <a
-            href="https://github.com/beast-ofcourse/atom-lite/tree/master/docs"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
+          <a href="/docs">
             Docs
           </a>
           <a
