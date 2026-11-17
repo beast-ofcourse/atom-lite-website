@@ -1,0 +1,27 @@
+[
+  {
+    "check": "tilt",
+    "target": "main#main > section.install-card > div.stamp",
+    "reason": "The rotated rubber stamp is the signature of the committed Impeccable world The Session Drawer, not a decorative tilt."
+  },
+  {
+    "check": "tilt",
+    "target": "div#session-panel > article.session-card.slot-1",
+    "reason": "The filed cards are deliberately fanned in the card-catalogue world; small rotations are the world's material language."
+  },
+  {
+    "check": "hero-fill",
+    "target": "main#main > section.drawer",
+    "reason": "The direction contract commits to a split first viewport: stamped install slip and session drawer share the screen."
+  },
+  {
+    "check": "one-section",
+    "target": "h1#product-name",
+    "reason": "The committed FIRST VIEWPORT is a two-part hero; the kit's one-section-per-screen convention belongs to a different world."
+  },
+  {
+    "check": "container-edges",
+    "target": "div.page \"atom-liteDocsGitHubatom-liteLocal-first,\"",
+    "reason": "The site uses its own .wrap container and split grid rather than the kit's single-column margin lines."
+  }
+]

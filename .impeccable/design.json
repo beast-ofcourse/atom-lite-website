@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-17T00:00:00.000Z",
+  "title": "Design System: Atom-lite Website",
+  "extensions": {
+    "colorMeta": {
+      "kraft": { "role": "neutral", "displayName": "Kraft Ground", "canonical": "#e7dcc3" },
+      "kraft-deep": { "role": "neutral", "displayName": "Deep Kraft", "canonical": "#ded0b2" },
+      "card": { "role": "neutral", "displayName": "Card Stock", "canonical": "#efe6d0" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#211e1a" },
+      "ink-soft": { "role": "neutral", "displayName": "Ink Soft", "canonical": "#484236" },
+      "stamp": { "role": "primary", "displayName": "Signal Stamp", "canonical": "#8c2f22" },
+      "rule": { "role": "neutral", "displayName": "Hairline", "canonical": "rgba(33, 30, 26, 0.24)" },
+      "tab": { "role": "neutral", "displayName": "Catalogue Tab", "canonical": "#cdbb9a" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display — Bricolage Grotesque", "purpose": "Product name and chapter titles." },
+      "body": { "displayName": "Body — Geist", "purpose": "Prose and UI copy." },
+      "label": { "displayName": "Label — Geist Mono", "purpose": "Commands, dates, catalogue metadata." }
+    },
+    "shadows": [
+      { "name": "install-slip", "value": "0 18px 42px rgba(33, 30, 26, 0.13)", "purpose": "Front install card." },
+      { "name": "filed-card", "value": "0 8px 20px rgba(33, 30, 26, 0.08)", "purpose": "Session cards at rest." },
+      { "name": "document-sheet", "value": "0 16px 40px rgba(33, 30, 26, 0.1)", "purpose": "Documentation paper." }
+    ],
+    "motion": [
+      { "name": "entrance", "value": "gsap expo.out, 0.6–0.9s", "purpose": "Single orchestrated first-load entrance; additive from a visible state." },
+      { "name": "hover-lift", "value": "translateY(-2px), 160–180ms ease", "purpose": "Linked cards and panels." },
+      { "name": "focus-ring", "value": "2px #8c2f22, offset 3px", "purpose": "Keyboard focus." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "560px" },
+      { "name": "tablet", "value": "920px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The install command — a working copy control, never a decorative link.",
+      "html": "<button class=\"ds-btn-primary\">npm install -g atom-lite</button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:space-between; gap:12px; width:100%; padding:15px 17px; border:1px solid #211e1a; border-radius:3px; background:#211e1a; color:#efe6d0; font-family:'Geist Mono',ui-monospace,monospace; font-size:0.9rem; cursor:pointer; transition:background-color 180ms ease,transform 180ms ease; } .ds-btn-primary:hover { background:#332e26; } .ds-btn-primary:active { transform:translateY(1px); } .ds-btn-primary:focus-visible { outline:2px solid #8c2f22; outline-offset:3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet alternative action with a dashed hairline edge.",
+      "html": "<button class=\"ds-btn-secondary\">See the docs</button>",
+      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; justify-content:space-between; gap:12px; width:100%; padding:15px 17px; border:1px dashed rgba(33,30,26,0.24); border-radius:3px; background:transparent; color:#211e1a; font-family:'Geist Mono',ui-monospace,monospace; font-size:0.9rem; cursor:pointer; transition:background-color 180ms ease; } .ds-btn-secondary:hover { background:rgba(33,30,26,0.05); } .ds-btn-secondary:focus-visible { outline:2px solid #8c2f22; outline-offset:3px; }"
+    },
+    {
+      "name": "Catalogue Card",
+      "kind": "card",
+      "refersTo": "card-catalogue",
+      "description": "A filed slip: hairline border, card-stock ground, soft offset shadow.",
+      "html": "<article class=\"ds-card\"><span class=\"ds-card-id\">S-041</span><h3 class=\"ds-card-title\">Session title</h3></article>",
+      "css": ".ds-card { background:#ded0b2; border:1px solid rgba(33,30,26,0.24); border-radius:3px; padding:14px 15px 16px; box-shadow:0 8px 20px rgba(33,30,26,0.08); transition:transform 180ms ease; } .ds-card:hover { transform:translateY(-2px); } .ds-card-id { font-family:'Geist Mono',ui-monospace,monospace; font-size:0.6rem; color:#8c2f22; } .ds-card-title { font-family:'Bricolage Grotesque',Georgia,serif; font-weight:600; font-size:1rem; margin:7px 0 0; }"
+    },
+    {
+      "name": "Catalogue Tab",
+      "kind": "nav",
+      "description": "Mono uppercase filter with an inverted active state.",
+      "html": "<button class=\"ds-tab is-active\">Today</button>",
+      "css": ".ds-tab { font-family:'Geist Mono',ui-monospace,monospace; font-size:0.68rem; letter-spacing:0.07em; text-transform:uppercase; padding:8px 10px; border:1px solid transparent; border-radius:2px; background:transparent; color:#484236; cursor:pointer; } .ds-tab:hover { background:rgba(33,30,26,0.07); color:#211e1a; } .ds-tab.is-active { background:#211e1a; color:#efe6d0; border-color:#211e1a; } .ds-tab:focus-visible { outline:2px solid #8c2f22; outline-offset:3px; }"
+    },
+    {
+      "name": "Install Slip",
+      "kind": "card",
+      "description": "The front card of the drawer, holding the product name and the install action.",
+      "html": "<section class=\"ds-slip\"><h1>atom-lite</h1><p>Local-first, model-agnostic coding agent for the terminal.</p></section>",
+      "css": ".ds-slip { background:#efe6d0; border:1px solid rgba(33,30,26,0.24); border-radius:4px; padding:clamp(26px,3.4vw,54px); box-shadow:0 18px 42px rgba(33,30,26,0.13); } .ds-slip h1 { font-family:'Bricolage Grotesque',Georgia,serif; font-weight:800; font-size:clamp(3.1rem,6vw,5.1rem); line-height:0.94; letter-spacing:-0.035em; margin:0 0 16px; } .ds-slip p { color:#484236; max-width:34ch; }"
+    },
+    {
+      "name": "Document Sheet",
+      "kind": "card",
+      "description": "The documentation paper, with a mono index and ruled sections.",
+      "html": "<article class=\"ds-doc\"><h1>Documentation</h1><p>Guides for the current release.</p></article>",
+      "css": ".ds-doc { max-width:780px; background:#efe6d0; border:1px solid rgba(33,30,26,0.24); border-radius:4px; padding:clamp(28px,4vw,64px); box-shadow:0 16px 40px rgba(33,30,26,0.1); } .ds-doc h1 { font-family:'Bricolage Grotesque',Georgia,serif; font-weight:800; font-size:clamp(2.2rem,4vw,3.2rem); letter-spacing:-0.035em; margin:0 0 16px; } .ds-doc p { color:#484236; line-height:1.65; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Catalogue Drawer",
+    "overview": "The site is an open archive drawer, not a marketing funnel. Warm kraft stock is the ground and the card faces; deep charcoal ink carries every word; one signal-red rubber stamp marks the active card and nothing else. The interface borrows the grammar of a library card catalogue — tabbed dividers, filed slips, ruled lines, a stamped call number — and makes the install command the front card's working action. Content is deliberately factual: the product's own README voice, real screenshots, a real terminal recording, and no invented social proof. The personality is precise, handmade, and unsentimental. Density is moderate: one chapter per screen, generous separation between chapters, tight groups inside a card. The WebGL layer draws faint kozo fibre and press grain on the ground; it is material, not decoration, and rests under reduced motion.",
+    "keyCharacteristics": [
+      "Kraft ground and card stock, one signal red reserved for active state",
+      "Display grotesk with real weight, monospace for commands, dates, and labels",
+      "Ruled catalogue cards with small corner radii and soft, offset shadows",
+      "One orchestrated entrance; hover and press feedback on every control",
+      "Real product captures only; no fabricated claims or testimonials"
+    ],
+    "rules": [
+      { "name": "The One Stamp Rule", "body": "Signal red appears only on an active state, an identifier, or a marker. It never becomes a large fill or a background wash.", "section": "colors" },
+      { "name": "The Ink Rule", "body": "Contrast comes from ink weight, not from adding colour to secondary text; secondary copy is tinted from the same charcoal hue.", "section": "colors" },
+      { "name": "The Label Rule", "body": "Uppercase mono is for catalogue metadata only, never for an eyebrow above a heading. The heading carries its own weight.", "section": "typography" },
+      { "name": "The Border-or-Shadow Rule", "body": "A surface takes a hairline border or a soft shadow for its edge, never a heavy border stacked under a soft shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the install command as the unmistakable primary action in the first viewport.",
+      "Do use real product captures and label them honestly.",
+      "Do keep every control keyboard-reachable and every motion additive from an already-visible state.",
+      "Do honour prefers-reduced-motion across GSAP and the shader."
+    ],
+    "donts": [
+      "Don't add testimonials, customer counts, pricing, or other claims the repository cannot support.",
+      "Don't invent a production domain; NEXT_PUBLIC_SITE_URL is the only canonical source.",
+      "Don't use gradient text, glass decoration, hard offset shadows, or emoji as icons.",
+      "Don't let signal red become a large fill or a background wash."
+    ]
+  }
+}

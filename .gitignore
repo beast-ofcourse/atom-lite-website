@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+
+# Local-only env overrides; .env.production is committed (public canonical URL).
+.env*.local
+
+# Runtime check/review artifacts, not design records.
+.taste-skill/*
+!.taste-skill/waivers.json
+.playwright-mcp/
+shots/
+
+.impeccable/questions/
+.impeccable/mocks/
+.impeccable/review/
+.impeccable/build/
+.impeccable/critique/
